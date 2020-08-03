@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "header.html" . }}
+
+    <!-- Main section -->
+    <div class="container container-flex">
+      <main>
+
+        <article class="article-main">
+          <h1 class="article-post">{{ .Title }}</h1>
+          {{ .Content }}
+
+          <img src="{{ .Params.image }}" class="article-image img-crop">
+          {{ if isset .Params "date" }}
+          <p class="article-info">{{ dateFormat "January 2, 2006" .Date }}</p>
+          {{ end }}
+        </article>
+
+      </main>
+
+      <aside>
+        <div class="widget">
+          <h2 class="widget-title"><a href="#" class="title-link">Introduce my blog</a></h2>
+          <img src="{{ .Site.BaseURL }}image/kite.jpg" class="widget-image">
+          <p class="widget-body">Hello!</p>
+        </div>
+
+        <div class="widget">
+          <h2 class="widget-title">Recent post</h2>
+
+          {{ range first 3 .Site.RegularPages }}
+          <div class="widget-post">
+            <h3 class="widget-post-title"><a href="{{ .URL }}" class="title-link">{{ .Title }}</a></h3>
+            <img src="{{ .Params.image }}" class="widget-post-image">
+          </div>
+          {{ end }}
+        </div>
+      </aside>
+    </div>
+
+    {{ partial "footer.html" . }}
+
+    {{ partial "back-top.html" . }}
+
+    <script src="{{ .Site.BaseURL }}js/script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <!-- Header section -->
+    {{ partial "header.html" . }}
+
+    <!-- Main section -->
+    <div class="container container-flex">
+      <main>
+        <article class="article-main">
+          <h2 class="article-title"><a href="/introduce/" class="title-link">Introduce about our page</a></h2>
+          <p class="article-body">Welcome to the blog of cute creatures.</p>
+          <img src="image/kite.jpg" class="article-image">
+          <p class="article-info">January 01, 2020</p>
+          <a href="/introduce" class="article-read-more">Read More</a>
+        </article>
+
+        {{ range first 3 .Site.RegularPages }}
+        <article class="article-recent">
+          <div class="article-recent-main">
+            <h2 class="article-title"><a href="{{ .URL }}" class="title-link">{{ .Title }}</a></h2>
+            <p class="article-body">{{ .Description }}</p>
+            <a href="{{ .URL }}" class="article-read-more">Read More</a>
+          </div>
+
+          <div class="article-recent-secondary">
+            <img src="{{ .Params.image }}" class="article-image">
+            <p class="article-info">{{ dateFormat "January 2, 2006" .Date }}</p>
+          </div>
+        </article>
+        {{ end }}
+
+      </main>
+
+      <aside>
+        <div class="widget">
+          <h2 class="widget-title"><a href="{{ .URL }}" class="title-link">About us</a></h2>
+          <img src="image/sleep.jpg" class="widget-image">
+          <p class="widget-body">Cute <3</p>
+        </div>
+
+        <div class="widget">
+          <h2 class="widget-title">Recent post</h2>
+
+          {{ range first 3 .Site.RegularPages }}
+          <div class="widget-post">
+            <h3 class="widget-post-title"><a href="{{ .URL }}" class="title-link">{{ .Title }}</a></h3>
+            <img src="{{ .Params.image }}" class="widget-post-image">
+          </div>
+          {{ end }}
+
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer section -->
+    {{ partial "footer.html" . }}
+
+    <!-- Back to top Button -->
+    {{ partial "back-top.html" . }}
+
+    <script src="{{ .Site.BaseURL }}js/script.js"></script>
+
+  </body>
+</html>

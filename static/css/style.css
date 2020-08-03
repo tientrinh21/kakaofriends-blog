@@ -1,0 +1,486 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #121212;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.img-crop {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* ============
+Typography
+============ */
+
+/* general */
+h1, h2, h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+p {
+  margin: .5em 0;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;  /* get color from parent element */
+}
+
+a:hover {
+  font-weight: 400;
+}
+
+/* h1 subtitle */
+.subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* navigation */
+nav a {
+  text-decoration: none;
+  color: #121212;
+  font-weight: 400;
+}
+
+nav a:hover {
+  font-weight: 700;
+}
+
+/* article */
+article h2,
+.article-title {
+  font-size: 1.75rem;
+  margin: .5em 0;
+}
+
+article h3,
+.article-subtitle {
+  font-size: 1.375rem;
+  margin: 0.25em 0;
+}
+
+.article-info {
+  font-size: .875rem;
+}
+
+.article-read-more {
+  text-decoration: none;
+  color: #121212;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.article-read-more:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.article-post {
+  font-size: 2.25rem;
+  margin-top: 0.5em;
+}
+
+/* widget */
+.widget-post-title {
+  font-size: 1.125rem;
+}
+
+/* article + widget */
+.title-link {
+  text-decoration: none;
+  color: #121212;
+}
+
+.title-link:hover {
+  text-decoration: underline;
+}
+
+/* footer */
+footer {
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+
+/* ============
+Layout
+============ */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  padding-top: 1.5em;
+}
+
+main {
+  margin: 0em;
+  margin-bottom: 1.5em;
+}
+
+aside {
+  margin: 2em;
+}
+
+footer {
+  background-color: #121212;
+  text-align: center;
+  padding: 2em 0;
+}
+
+/* navigation */
+nav {
+  display: none;
+}
+
+#nav-small {
+  display: none;
+  position: absolute;
+  width: 90%;
+  top: 6.125em;
+  background-color: #fff;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 0.5em;
+}
+
+nav a {
+  padding: 0.5em;
+}
+
+.current-page {
+  background-color: #121212;
+  color: #fff;
+  border-radius: .5em;
+  padding: 0.5em;
+}
+
+/* article */
+.article-main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 3em 0;
+}
+
+.article-image {
+  order: -3;
+}
+
+.article-post {
+  order: -2;
+}
+
+.article-info {
+  order: -1;
+}
+
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 3em 0;
+}
+
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+/* widget */
+.widget {
+  border: 3px solid #121212;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.widget-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-post-title {
+  order: 2;
+}
+
+.widget-post-image {
+  order: 1;
+}
+
+/* back to top button */
+#top-btn {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  width: 2.5em;
+  height: 2.5em;
+  border: solid 2px #121212;
+  border-radius: 50%;
+  bottom: 1.25em;
+  right: 1.25em;
+  background-color: #121212;
+  color: #fff;
+}
+
+#top-btn:hover {
+  background-color: #121212;
+  color: #fff;
+}
+
+#arrow {
+  font-size: 1.25rem;
+}
+
+/* menu toggle button */
+#menu-btn {
+  z-index: 99;
+  border: none;
+  background-color: #fff;
+  color: #121212;
+  margin: 1em 0 0 0;
+  padding: .5em 0;
+}
+
+#menu-icon {
+  font-size: 1rem;
+  padding: 0;
+  transition: all .125s;
+}
+
+/* dark mode */
+#dark-mode {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* ============
+Media query
+============ */
+
+@media (min-width: 825px) {
+  .container-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header {
+    text-align: left;
+    padding: 2em 0;
+  }
+
+  main {
+    width: 80%;
+  }
+
+  aside {
+    width: 15%;
+    margin: 0;
+  }
+
+  /* navigation */
+  nav {
+    display: block;
+  }
+
+  #nav-small {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav li {
+    margin: 0;
+    margin-left: 1em;
+  }
+
+  nav a {
+    padding: 0.5em 0;
+  }
+
+  /* article */
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .article-recent-main {
+    width: 70%;
+  }
+
+  .article-recent-secondary {
+    width: 25%;
+  }
+
+  /* back to top button */
+  #top-btn {
+    width: 3em;
+    height: 3em;
+    bottom: 3em;
+    right: 6em;
+    background-color: transparent;
+    color: #121212
+  }
+
+  /* menu toggle btn */
+  #menu-btn {
+    display: none;
+  }
+}
+
+/* ============
+Animation
+============ */
+.btn-entrance {
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate(0, 40%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.btn-exit {
+  animation-duration: .25s;
+  animation-fill-mode: both;
+  animation-name: btnExit;
+}
+
+@keyframes btnExit {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, 40%);
+  }
+}
+
+.menu-open {
+  animation-duration: .375s;
+  animation-fill-mode: both;
+  animation-name: menuOpen;
+}
+
+@keyframes menuOpen {
+  from {
+    opacity: 0;
+    transform: translate(0, -2.5em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.menu-close {
+  animation-duration: .25s;
+  animation-fill-mode: both;
+  animation-name: menuClose;
+}
+
+@keyframes menuClose {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, -2.5em);
+  }
+}
+
+.main-expand {
+  animation-duration: .375s;
+  animation-fill-mode: both;
+  animation-name: mainExpand;
+}
+
+@keyframes mainExpand {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(0, 7em);
+  }
+}
+
+.main-collapse {
+  animation-duration: .25s;
+  animation-fill-mode: both;
+  animation-name: mainCollapse;
+}
+
+@keyframes mainCollapse {
+  from {
+    transform: translate(0, 7em);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}

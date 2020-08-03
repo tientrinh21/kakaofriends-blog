@@ -1,0 +1,30 @@
+<!-- Header section -->
+<header>
+  <div class="container container-flex">
+    <div class="site-title">
+      <h1>{{ .Site.Title }}</h1>
+      <p class="subtitle">{{ .Site.Params.Subtitle }}</p>
+    </div>
+
+    <!-- Menu Button -->
+    <button id="menu-btn"><i id="menu-icon" class="fas fa-bars"></i></button>
+
+    <nav id="nav-small">
+      <ul>
+        {{ $currentPage := .URL }}
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" {{ if eq $currentPage .URL }}class="current-page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        {{ $currentPage := .URL }}
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" {{ if eq $currentPage .URL }}class="current-page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

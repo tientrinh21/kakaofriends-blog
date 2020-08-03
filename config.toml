@@ -1,0 +1,25 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Kakao Friends"
+paginate = 5
+
+[params]
+  subtitle = "A blog of nothing"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Post"
+  url = "/post/"
+  weight = 2
+
+[[menu.main]]
+  name = "About us"
+  url = "/about-us/"
+  weight = 3
+
+[taxonomies]
+  tag = "tags"
