@@ -1,6 +1,6 @@
 # Kakaofriends blog
 
-[Imgur](https://i.imgur.com/inlYesg.jpg)
+[!](https://i.imgur.com/inlYesg.jpg)
 
 A blog build with JAM stack using Vanilla JS, Netlify CMS and Hugo (static site generator)
 
