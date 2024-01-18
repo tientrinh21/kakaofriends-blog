@@ -1,4 +1,4 @@
-# Kakaofriends blog
+# Kakao Friends blog
 
 ![Hero img](https://i.imgur.com/xqWXcyK.png)
 
